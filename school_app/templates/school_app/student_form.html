@@ -3,6 +3,12 @@
 {% block content %}
   
   <form action="" method="post">
+    {% csrf_token %}
+    
     <h2>Will add a form here</h2>
+
+    {{ form }}
+
+    <button type="submit" class="btn btn-success py-1"><i class="fa-solid fa-floppy-disk"></i> Save</button>
   </form>
 {% endblock content %}

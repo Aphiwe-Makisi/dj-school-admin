@@ -6,7 +6,7 @@
   >
 </div>
 
-<table class="table mt-3">
+<table class="table table-responsive mt-3">
   <thead>
     <tr class="table-dark">
       <th>FIRST NAME</th>
@@ -16,5 +16,19 @@
       <th>ACTIONS</th>
     </tr>
   </thead>
+  <tbody>
+    {% for student in all_students %}
+    <tr>
+      <td>{{ student.first_name }}</td>
+      <td>{{ student.last_name }}</td>
+      <td>{{ student.id_number }}</td>
+      <td>NA</td>
+      <td>
+        <button class="btn btn-warning py-1"><i class="fa-solid fa-list"></i> Details</button>
+        <button class="btn btn-danger py-1"><i class="fa-solid fa-trash"></i> Delete</button>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
 </table>
 {% endblock %}

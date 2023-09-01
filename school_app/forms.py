@@ -1,4 +1,6 @@
 from django import forms
 
-class NameForm(forms.Form):
-    your_name = forms.CharField(label="Your name", max_length=100)
+class StudentRegistrationForm(forms.Form):
+    first_name = forms.CharField(max_length=100)
+    last_name = forms.CharField(max_length=100)
+    id_number = forms.CharField(min_length=13, max_length=13)
