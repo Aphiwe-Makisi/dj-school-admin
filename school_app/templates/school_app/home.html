@@ -1,15 +1,20 @@
-{% extends "school_app/base.html" %}
+{% extends "school_app/base.html" %} {% block content %}
+<div class="d-flex justify-content-between">
+  <div></div>
+  <a href="{% url 'student_form' %}" class="btn btn-outline-success"
+    ><i class="fa fa-sharp fa-plus"></i> Add student</a
+  >
+</div>
 
-{% block content %}
-  <table class="table mt-3">
-    <thead>
-      <tr class="table-dark">
-        <th>FIRST NAME</th>
-        <th>LAST NAME</th>
-        <th>ID NUMBER</th>
-        <th>GENDER</th>
-        <th>ACTIONS</th>
-      </tr>
-    </thead>
-  </table>
+<table class="table mt-3">
+  <thead>
+    <tr class="table-dark">
+      <th>FIRST NAME</th>
+      <th>LAST NAME</th>
+      <th>ID NUMBER</th>
+      <th>GENDER</th>
+      <th>ACTIONS</th>
+    </tr>
+  </thead>
+</table>
 {% endblock %}
