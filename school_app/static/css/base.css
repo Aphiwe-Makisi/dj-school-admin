@@ -1,0 +1,9 @@
+html, body {
+  height: 100vh;
+}
+
+nav {
+  background-color: #003049;
+  color: #fff;
+  box-shadow: 0 0 20px -8px #000;
+}
