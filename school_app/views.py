@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render
-from school_app.forms import StudentRegistrationForm
+from school_app.forms import StudentRegistrationForm, UpdateStudentForm
 from .models import Student
 
 # Create your views here.
@@ -14,13 +14,32 @@ def add_new_student(request):
         form = StudentRegistrationForm(request.POST)
 
         if form.is_valid():
-            first_name = form.cleaned_data["first_name"]
-            last_name = form.cleaned_data["last_name"]
-            id_number = form.cleaned_data["id_number"]
-
-            Student.objects.create(first_name=first_name, last_name=last_name, id_number=id_number)
-            return redirect("/students/")
+            form.save()
+            return redirect("home")
     else:
         form = StudentRegistrationForm()
         
     return render(request, "school_app/student_form.html", {"form": form})
+
+def view_student_details(request, pk):
+    student = Student.objects.get(pk=pk)
+    context = {"student": student}
+    return render(request, "school_app/student_details.html", context=context)
+
+def update_student_details(request, pk):
+    student = Student.objects.get(pk=pk)
+
+    if request.method == "POST":
+        form = UpdateStudentForm(request.POST, instance=student)
+
+        if form.is_valid():
+            form.save()
+            return redirect("home")
+    else:
+        form = UpdateStudentForm(instance=student)
+    
+    context = {"student": student, "form": form}
+    return render(request, 'school_app/update_student_form.html', context=context)
+
+def user_login(request):
+    return render(request, "school_app/user_login.html") 

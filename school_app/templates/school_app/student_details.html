@@ -1,0 +1,22 @@
+{% extends 'school_app/base.html' %}
+
+{% block content %}
+
+  <div class="bg-light rounded shadow-sm mt-3 p-3">
+    <h1>{{student.first_name}} {{student.last_name}}</h1>
+    <hr>
+
+    <p><strong>ID NUMBER:</strong> {{student.id_number}}</p>
+    <p><strong>Gender:</strong> {{student.gender}}</p>
+
+    <p><strong>ADDRESS:</strong></p>
+    <p><strong>SUBURB:</strong></p>
+    <p><strong>CITY:</strong></p>
+    <p><strong>PROVINCE:</strong></p>
+
+    <hr>
+    <a href="{% url 'update_student' student.id %}" class="btn btn-primary">Update student</a>
+    <a href="" class="btn btn-danger"><i class="fa fa-sharp fa-trash"></i> Delete Student</a>
+    <a href="{% url 'home' %}" class="btn btn-outline-secondary"><i class="fa-solid fa-arrow-left"></i> Back</a>
+  </div>
+{% endblock content %}
