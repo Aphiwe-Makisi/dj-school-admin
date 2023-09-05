@@ -3,14 +3,16 @@
 
 {% block content %}
   
-  <form action="" method="post" autocomplete="off" class="bg-light p-3 rounded">
-    {% csrf_token %}
-    
+  <div class="bg-light p-3 rounded">
     <h2>Create new student.</h2>
-
-    {{ form|crispy }}
-
-    <button type="submit" class="btn btn-primary py-1"><i class="fa-solid fa-floppy-disk"></i> Save student</button>
-    <a href="{% url 'home' %}" type="button" class="btn btn-outline-secondary py-1"><i class="fa-solid fa-arrow-left"></i> Back</a>
-  </form>
+    <hr>
+    <form action="" method="post" autocomplete="off" class="w-100">
+      {% csrf_token %}
+    
+      {{ form|crispy }}
+  
+      <button type="submit" class="btn btn-primary py-1"><i class="fa-solid fa-floppy-disk"></i> Save student</button>
+      <a href="{% url 'home' %}" type="button" class="btn btn-outline-secondary py-1"><i class="fa-solid fa-arrow-left"></i> Back</a>
+    </form>
+  </div>
 {% endblock content %}

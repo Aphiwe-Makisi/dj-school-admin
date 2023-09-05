@@ -4,14 +4,13 @@
 
 {% block content %}
   <div class="bg-light p-3 rounded">
-    <form action="" method="post">
+    <h2>Update {{student.first_name}}'s details</h2>
+    <hr>
+    <form action="" method="post" class="w-100">
       {% csrf_token %}
-      <h2>Update {{student.first_name}}'s details</h2>
-      <hr>
 
       {{form|crispy}}
 
-      <hr>
       <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Save changes</button>
       <a href="{% url 'home' %}" type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-arrow-left"></i> Back</a>
     </form>
