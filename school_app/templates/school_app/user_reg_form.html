@@ -1,0 +1,21 @@
+{% extends 'school_app/base.html' %} 
+{% load crispy_forms_tags %} 
+
+
+{% block content %}
+
+  <div class="form-container bg-light p-4 rounded shadow-sm mt-5">
+    <h3>Register an account</h3>
+    <hr />
+    <form action="">
+      {% csrf_token %}
+
+
+      <button type="submit" class="btn btn-success">
+        <i class="fa fa-sharp fa-check"></i>&nbsp; Submit
+      </button>
+      <a href="{% url 'home' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+  </div>
+
+{% endblock content %}

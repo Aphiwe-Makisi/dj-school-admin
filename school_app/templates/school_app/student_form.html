@@ -6,10 +6,19 @@
   <div class="bg-light p-3 rounded">
     <h2>Create new student.</h2>
     <hr>
-    <form action="" method="post" autocomplete="off" class="w-100">
+    <form action="" method="post" autocomplete="off" class="w-100" novalidate>
       {% csrf_token %}
     
-      {{ form|crispy }}
+      <div class="row">
+        <div class="col-6">
+          {{form.first_name|as_crispy_field}}
+        </div>
+        <div class="col-6">
+          {{form.last_name|as_crispy_field}}
+        </div>
+      </div>
+      {{form.id_number|as_crispy_field}}
+      {{form.gender|as_crispy_field}}
   
       <button type="submit" class="btn btn-primary py-1"><i class="fa-solid fa-floppy-disk"></i> Save student</button>
       <a href="{% url 'home' %}" type="button" class="btn btn-outline-secondary py-1"><i class="fa-solid fa-arrow-left"></i> Back</a>
