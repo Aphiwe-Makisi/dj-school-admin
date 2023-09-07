@@ -50,6 +50,13 @@ def delete_student(request, pk):
     student.delete()
     return redirect("home")
 
+################################################################
+
 # - User login
 def user_login(request):
-    return render(request, "school_app/user_login.html") 
+    return render(request, "school_app/user_login_form.html") 
+
+# - User registration
+
+def user_registration(request):
+    return render(request, "school_app/user_reg_form.html")

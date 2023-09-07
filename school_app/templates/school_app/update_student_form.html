@@ -3,10 +3,10 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-  <div class="bg-light p-3 rounded">
+  <div class="bg-light p-3 rounded form-container">
     <h2>Update {{student.first_name}}'s details</h2>
     <hr>
-    <form action="" method="post" class="w-100">
+    <form action="" method="post">
       {% csrf_token %}
 
       {{form|crispy}}
@@ -16,3 +16,9 @@
     </form>
   </div>
 {% endblock content %}
+
+<style>
+  .form-container {
+    width: 500px;
+  }
+</style>

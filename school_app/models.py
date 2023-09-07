@@ -6,6 +6,7 @@ class CommonFields(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     id_number = models.CharField(max_length=13)
+    gender = models.CharField(null=True, max_length=6)
 
     class Meta:
         abstract = True
