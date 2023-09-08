@@ -65,6 +65,8 @@ def delete_student(request, pk):
 
 # - User login
 def user_login(request):
+
+    
     if request.method == "POST":
         form = AuthenticationForm(request.POST)
 
