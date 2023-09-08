@@ -12,7 +12,7 @@
       {{form|crispy}}
 
       <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Save changes</button>
-      <a href="{% url 'home' %}" type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-arrow-left"></i> Back</a>
+      <a href="{% url 'student_details' student.id %}" type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-arrow-left"></i> Back</a>
     </form>
   </div>
 {% endblock content %}

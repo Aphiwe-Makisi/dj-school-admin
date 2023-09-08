@@ -21,7 +21,8 @@
       {{form.gender|as_crispy_field}}
   
       <button type="submit" class="btn btn-primary py-1"><i class="fa-solid fa-floppy-disk"></i> Save student</button>
-      <a href="{% url 'home' %}" type="button" class="btn btn-outline-secondary py-1"><i class="fa-solid fa-arrow-left"></i> Back</a>
+      <a href="{% url 'student_list' %}" type="button" class="btn btn-outline-secondary py-1"><i class="fa-solid fa-arrow-left"></i> Back</a>
     </form>
   </div>
 {% endblock content %}
+
