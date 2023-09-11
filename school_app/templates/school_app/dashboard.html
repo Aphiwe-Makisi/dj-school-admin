@@ -1,0 +1,74 @@
+{% extends 'school_app/base.html' %} 
+
+
+{% block content %}
+
+<body class="bg-light">
+  <div class="container-fluid p-0">
+
+    {% include 'school_app/side_nav.html' %}
+
+    <div class="container">
+
+      <h3>Welcome to dashboard, {{ user }}. 👋</h3>
+
+    
+    <div class="mt-5">
+      <a href="{% url 'student_form' %}" class="btn btn-outline-primary d-block"
+        ><i class="fa-solid fa-user-plus"></i> Add student</a
+      >
+
+      <div class="row mt-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="card shadow text-center mb-3 card-one">
+            <h2>Total Students</h2>
+            <hr class="m-0" />
+            <h2>{{ students }}</h2>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card shadow text-center mb-3 card-two">
+            <h2>Card 2</h2>
+            <hr class="m-0" />
+            <h2>Stat</h2>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card shadow text-center mb-3 card-three">
+            <h2>Card 3</h2>
+            <hr class="m-0" />
+            <h2>Stat</h2>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card shadow text-center mb-3 card-four">
+            <h2>Card 4</h2>
+            <hr class="m-0" />
+            <h2>Stat</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-md-6">
+          <div class="card pt-4 shadow mb-2">
+            <h3 class="text-center">Some title</h3>
+          <hr class="mt-0">
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim recusandae animi laboriosam sed vitae, magnam impedit fugit voluptas debitis nam beatae distinctio natus aut nostrum odio numquam fugiat magni quos qui, a placeat voluptatibus asperiores tempore. Cum, vel. Tempora amet minima deserunt, repellendus harum voluptatem. Iure soluta, est id corporis eum ut aut nam! Aliquid nisi expedita cupiditate cumque fugiat dicta cum libero eum voluptatem, corporis, laborum voluptatibus nam quibusdam culpa eligendi voluptas qui nostrum beatae aut reiciendis ab excepturi fugit? Quas quam nemo libero exercitationem corrupti quisquam necessitatibus, vel nulla explicabo maxime eaque itaque illo commodi dolorum tempora possimus.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card pt-4 shadow mb-2">
+            <h3 class="text-center">Some title</h3>
+          <hr class="mt-0">
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim recusandae animi laboriosam sed vitae, magnam impedit fugit voluptas debitis nam beatae distinctio natus aut nostrum odio numquam fugiat magni quos qui, a placeat voluptatibus asperiores tempore. Cum, vel. Tempora amet minima deserunt, repellendus harum voluptatem. Iure soluta, est id corporis eum ut aut nam! Aliquid nisi expedita cupiditate cumque fugiat dicta cum libero eum voluptatem, corporis, laborum voluptatibus nam quibusdam culpa eligendi voluptas qui nostrum beatae aut reiciendis ab excepturi fugit? Quas quam nemo libero exercitationem corrupti quisquam necessitatibus, vel nulla explicabo maxime eaque itaque illo commodi dolorum tempora possimus.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </div>
+</body>
+
+{% endblock content %}

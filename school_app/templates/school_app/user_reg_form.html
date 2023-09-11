@@ -1,10 +1,9 @@
 {% extends 'school_app/base.html' %} 
 {% load crispy_forms_tags %} 
 
-
 {% block content %}
-    
-    <form action="" method="post" class="form-container bg-light p-4 rounded shadow-sm mt-5">
+
+    <form action="" class="bg-light p-4 rounded shadow-sm mt-5 auth-form" method="post">
       <h3>Register an account</h3>
       <hr />
       {% csrf_token %}
@@ -23,9 +22,6 @@
             <a href="{% url 'home' %}" class="btn btn-secondary w-100">Cancel</a>
           </div>
         </div>
-        
-  
-       
 
       </div>
 

@@ -1,28 +1,87 @@
-{% extends 'school_app/base.html' %}
-{% load crispy_forms_tags %}
-
+{% extends 'school_app/base.html' %} 
+{% load crispy_forms_tags %} 
 {% block content %}
-  
-  <div class="bg-light p-3 rounded">
-    <h2>Create new student.</h2>
-    <hr>
-    <form action="" method="post" autocomplete="off" class="w-100" novalidate>
-      {% csrf_token %}
-    
-      <div class="row">
-        <div class="col-6">
-          {{form.first_name|as_crispy_field}}
-        </div>
-        <div class="col-6">
-          {{form.last_name|as_crispy_field}}
-        </div>
-      </div>
-      {{form.id_number|as_crispy_field}}
-      {{form.gender|as_crispy_field}}
-  
-      <button type="submit" class="btn btn-primary py-1"><i class="fa-solid fa-floppy-disk"></i> Save student</button>
-      <a href="{% url 'student_list' %}" type="button" class="btn btn-outline-secondary py-1"><i class="fa-solid fa-arrow-left"></i> Back</a>
-    </form>
-  </div>
-{% endblock content %}
 
+<div class="container-fluid p-0">
+  {% include 'school_app/side_nav.html' %}
+
+  <div class="container p-0">
+    <div class="bg-light p-3 rounded">
+      <h2>Create new student.</h2>
+      <hr />
+      <form action="" method="post" class="w-100">
+        {% csrf_token %}
+
+        <div class="bg-primary py-2 mb-2">
+          <h4 class="text-white m-0">PERSONAL DETAILS</h4>
+        </div>
+        <div class="row">
+          <div class="col-6">{{form.first_name|as_crispy_field}}</div>
+          <div class="col-6">{{form.last_name|as_crispy_field}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">{{form.id_number|as_crispy_field}}</div>
+          <div class="col-md-8">{{form.gender|as_crispy_field}}</div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="col-md-6">
+            <div class="bg-primary py-2 mb-2">
+              <h4 class="text-white m-0">PARENT DETAILS</h4>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">{{ form.parent_name|as_crispy_field }}</div>
+              <div class="col-md-6">
+                {{ form.parent_rel_to_student|as_crispy_field }}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-5">
+                {{ form.contact_number|as_crispy_field }}
+              </div>
+
+              <div class="col-md-7">{{ form.email|as_crispy_field }}</div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="bg-primary py-2 mb-2">
+              <h4 class="text-white m-0">EMERGENCY CONTACT DETAILS</h4>
+            </div>
+
+            <!-- This fields must change, just added them to update the form -->
+            <div class="row">
+              <div class="col-md-6">{{ form.parent_name|as_crispy_field }}</div>
+              <div class="col-md-6">
+                {{ form.parent_rel_to_student|as_crispy_field }}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-5">
+                {{ form.contact_number|as_crispy_field }}
+              </div>
+
+              <div class="col-md-7">{{ form.email|as_crispy_field }}</div>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary py-1">
+          <i class="fa-solid fa-floppy-disk"></i> Save student
+        </button>
+        <a
+          href="{% url 'student_list' %}"
+          type="button"
+          class="btn btn-outline-secondary py-1"
+          ><i class="fa-solid fa-arrow-left"></i> Back</a
+        >
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

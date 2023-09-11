@@ -2,21 +2,30 @@
 
 {% block content %}
 
-  <div class="bg-light rounded shadow-sm mt-3 p-3">
-    <h1>{{student.first_name}} {{student.last_name}}</h1>
-    <hr>
+  <div class="container-fluid p-0">
+    {% include 'school_app/side_nav.html' %}
 
-    <p><strong>ID NUMBER:</strong> {{student.id_number}}</p>
-    <p><strong>Gender:</strong> {{student.gender}}</p>
+    <div class="container">
+      <div class="bg-light rounded shadow-sm mt-3 p-3">
+        <h1>{{student.first_name}} {{student.last_name}}</h1>
+        <hr>
+    
+        <p><strong>ID NUMBER:</strong> {{student.id_number}}</p>
+        <p><strong>Gender:</strong> {{student.gender}}</p>
+    
+        <p><strong>ADDRESS:</strong></p>
+        <p><strong>SUBURB:</strong></p>
+        <p><strong>CITY:</strong></p>
+        <p><strong>PROVINCE:</strong></p>
+    
+        <hr>
+        <a href="{% url 'update_student' student.id %}" class="btn btn-primary">Update student</a>
+        <a href="{% url 'delete_student' student.id %}" class="btn btn-danger"><i class="fa fa-sharp fa-trash"></i> Delete Student</a>
+        <a href="{% url 'student_list' %}" class="btn btn-outline-secondary"><i class="fa-solid fa-arrow-left"></i> Back</a>
+      </div>
+    </div>
 
-    <p><strong>ADDRESS:</strong></p>
-    <p><strong>SUBURB:</strong></p>
-    <p><strong>CITY:</strong></p>
-    <p><strong>PROVINCE:</strong></p>
-
-    <hr>
-    <a href="{% url 'update_student' student.id %}" class="btn btn-primary">Update student</a>
-    <a href="{% url 'delete_student' student.id %}" class="btn btn-danger"><i class="fa fa-sharp fa-trash"></i> Delete Student</a>
-    <a href="{% url 'student_list' %}" class="btn btn-outline-secondary"><i class="fa-solid fa-arrow-left"></i> Back</a>
   </div>
+
+  
 {% endblock content %}

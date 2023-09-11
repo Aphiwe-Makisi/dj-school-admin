@@ -4,6 +4,7 @@ from django.contrib.auth import views as auth_view
 
 urlpatterns = [
     path("", views.home, name="home"),
+    path("dashboard/", views.dashboard, name="dashboard"),
     path("student_list/", views.get_all_students, name="student_list"),
     path("student_form/", views.add_new_student, name="student_form"),
     path("login/", auth_view.LoginView.as_view(template_name="school_app/user_login_form.html"), name="login"),

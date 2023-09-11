@@ -1,22 +1,20 @@
 {% extends 'school_app/base.html' %}
 {% load crispy_forms_tags %}
-{% load static %}
 
 {% block  content %}
-  <link rel="stylesheet" href="{% static 'css/base.css' %}">
-  <div class="form container bg-light p-4 rounded shadow-sm mt-5 text-center">
-    <h3>Login to your account</h3>
-    <hr>
-    <form action="{% url 'login' %}" method="post">
+    
+    <form class="bg-light p-4 rounded shadow-sm mt-5 auth-form" action="{% url 'login' %}" method="post">
+      <h3>Login to your account</h3>
+      <hr>
       {% csrf_token %}
 
       {{ form|crispy }}
 
-      <button type="submit" class="btn btn-primary"><i class="fa fa-sharp fa-key"></i>&nbsp; Login</button>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary"><i class="fa fa-sharp fa-key"></i>&nbsp; Login</button>
+
+        <p class="m-0 my-2"> Dont have an account?</p> <strong><a href="{% url 'user_registration' %}">Register</a></strong>
+      </div>
     </form>
-
-   <p class="m-0 my-2"> Dont have an account?</p> <strong><a href="{% url 'user_registration' %}">Register</a></strong>
-  </div>
-
 
 {% endblock  %}

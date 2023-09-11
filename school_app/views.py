@@ -10,6 +10,12 @@ def home(request):
     return render(request, "school_app/home.html")
 
 @login_required(login_url="login")
+def dashboard(request):
+    students = Student.objects.all()
+    context = {"students": students.count()}
+    return render(request, "school_app/dashboard.html", context=context)
+
+@login_required(login_url="login")
 def get_all_students(request):
     context = {"all_students": Student.objects.all()}
     return render(request, "school_app/student_list.html", context)

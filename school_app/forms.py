@@ -12,15 +12,12 @@ class StudentRegistrationForm(forms.ModelForm):
         min_length=13, max_length=13,
        validators= [RegexValidator(r'\d+', message="Ensure you only enter digits.")]
     )
-    gender = forms.CharField(widget=forms.Select(choices=[("Male", "Male"), ("Female", "Female")]))
 
     class Meta:
         model = Student
         fields = "__all__"
 
 class UpdateStudentForm(forms.ModelForm):
-    
-    gender = forms.CharField(widget=forms.Select(choices=[("Male", "Male"), ("Female", "Female")]))
     
     class Meta:
         model = Student
